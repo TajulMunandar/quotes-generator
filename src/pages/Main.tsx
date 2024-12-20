@@ -18,8 +18,8 @@ const Main: React.FC = () => {
       <div className="row ">
         <div className="col col-lg-10 text-center mx-auto">
           <p className="fs-4 ">
-            Tingkatkan kreativitas Anda dengan kutipan inspiratif. Pilih
-            kategori atau ketik ide Anda untuk memulai
+            Boost your creativity with inspirational quotes. Choose a category
+            or type in your idea to get started.
           </p>
         </div>
       </div>

@@ -1,28 +1,33 @@
+/* Mengatur background untuk responsivitas */
 body {
   background-image: url("./assets/background.jpg");
-  background-size: cover; /* Agar gambar memenuhi layar */
-  background-position: center; /* Posisikan di tengah */
-  background-repeat: no-repeat; /* Jangan ulangi gambar */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
 }
 
+/* Container utama dengan pengaturan lebar responsif */
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
   font-family: "Montserrat", sans-serif;
 }
 
-.card {
-  padding: 2em;
-}
-
+/* Mengatur ukuran judul responsif */
 .title {
   font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
+
 p {
   color: #c2c7c8;
 }
 
+/* Button untuk submit dengan hover yang responsif */
 .btn-submit {
   background-color: #7532b9 !important;
   color: white !important;
@@ -31,36 +36,207 @@ p {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.4s ease-in, color 0.4s ease-in,
-    border 0.4s ease-in; /* Pastikan transisi ini benar */
+    border 0.4s ease-in;
+  max-width: 100%;
+  width: auto;
 }
 
+/* Tombol kategori */
+.btn-category {
+  background-color: #7532b9 !important;
+  color: white !important;
+  border-color: #7532b9 !important;
+}
+
+/* Tombol kategori outline */
+.btn-outline-category {
+  border-color: #7532b9 !important;
+  color: white !important;
+  background-color: transparent !important;
+}
+
+.btn-category:hover,
+.btn-outline-category:hover {
+  background-color: #7532b9 !important;
+  border-color: rgba(179, 23, 184, 0.1) !important;
+  color: white !important;
+}
+
+/* Fokus pada tombol kategori */
+.btn-category:focus,
+.btn-outline-category:focus {
+  box-shadow: 0 0 10px rgba(234, 28, 220, 0.4);
+}
+
+/* Hover pada tombol submit */
 .btn-submit:hover {
   background-color: #0a0a0a !important;
   color: #f6ecf6 !important;
-  border: 1px solid #f6ecf6 !important;
 }
 
+/* Container kutipan */
 .quote-container {
   background: linear-gradient(
     135deg,
     hsla(298, 91.7%, 85.9%, 0.2),
     hsla(222, 90%, 85%, 0.1)
   );
-  backdrop-filter: blur(5px); /* Efek buram */
-  border-radius: 16px; /* Sudut membulat */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 80%;
+  width: 100%;
   max-width: 1100px;
   margin: 20px auto;
-  text-align: center; /* Pusatkan teks */
-  color: #fff; /* Warna teks putih */
-  font-family: "Arial", sans-serif; /* Font default */
-  transition: box-shadow border 0.4s ease-in, color 0.4s ease-in,
-    border 0.4s ease-in;
+  text-align: center;
+  color: #fff;
+  font-family: "Arial", sans-serif;
+  transition: box-shadow border 0.4s ease-in, color 0.4s ease-in;
 }
 
+/* Hover pada container kutipan */
 .quote-container:hover {
-  box-shadow: 1px 8px 30px rgba(234, 28, 220, 0.4); /* Bayangan lebih tebal */
-  border: 2px solid #7532b9; /* Garis tepi */
+  box-shadow: 1px 8px 30px rgba(234, 28, 220, 0.4);
+  border: 2px solid #7532b9;
+}
+
+/* Scrollbar kustom */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #fff transparent;
+  padding: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.custom-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Input pencarian */
+input.form-controls {
+  background-color: transparent;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  padding: 8px;
+  transition: all 0.3s ease;
+  max-width: 130px;
+  width: 100%;
+}
+
+/* Fokus pada input pencarian */
+input.form-controls:focus {
+  box-shadow: 0px 4px 15px rgba(234, 28, 220, 0.4);
+  border-bottom: 1px solid rgba(234, 28, 220, 0.8);
+  outline: none;
+}
+
+input.form-controls::placeholder {
+  color: #c2c7c8;
+  opacity: 1;
+}
+
+input.form-controls:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Pengaturan layout responsif menggunakan media queries */
+
+/* Untuk perangkat dengan lebar layar lebih kecil dari 768px (mobile) */
+@media (max-width: 767px) {
+  .quote-container {
+    padding: 1rem;
+  }
+
+  .btn-submit {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .btn-category,
+  .btn-outline-category {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  input.form-controls {
+    width: 100%;
+    max-width: 100%;
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .col {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .custom-scrollbar {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+/* Untuk perangkat dengan lebar layar antara 768px dan 1200px (tablet dan laptop) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .quote-container {
+    padding: 1.5rem;
+  }
+
+  .btn-submit {
+    width: auto;
+  }
+
+  .btn-category,
+  .btn-outline-category {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  input.form-controls {
+    max-width: 250px;
+    font-size: 15px;
+  }
+}
+
+/* Untuk perangkat dengan lebar layar lebih dari 1200px (desktop) */
+@media (min-width: 1200px) {
+  .quote-container {
+    padding: 2rem;
+  }
+
+  .btn-submit {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  .btn-category,
+  .btn-outline-category {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
 }
